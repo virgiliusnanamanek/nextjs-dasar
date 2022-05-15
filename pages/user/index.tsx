@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 
 export default function User() {
   return (
-    <Layout>
+    <Layout pageTitle="User Page">
       <div>User</div>
     </Layout>
   );

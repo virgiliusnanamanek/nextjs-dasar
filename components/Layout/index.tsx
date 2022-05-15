@@ -1,22 +1,33 @@
 /* eslint-disable import/extensions */
-/* eslint-disable linebreak-style */
 import { ReactNode } from 'react';
-// eslint-disable-next-line import/no-unresolved
+import Head from 'next/head';
 import Header from '../Header';
-// eslint-disable-next-line import/no-unresolved
 import Footer from '../Footer';
+import styles from './Layout.module.css';
 
 interface LayoutProps{
     children : ReactNode;
+    pageTitle : string;
 }
 
 export default function Layout(props: LayoutProps) {
-  const { children } = props;
+  const { children, pageTitle } = props;
   return (
-    <div>
-      <Header />
-      <div>{children}</div>
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>
+          Nextjs |
+          {' '}
+          {' '}
+          {pageTitle}
+        </title>
+        <meta name="description" content="nextjs website" />
+      </Head>
+      <div className={styles.container}>
+        <Header />
+        <div className={styles.content}>{children}</div>
+        <Footer />
+      </div>
+    </>
   );
 }
