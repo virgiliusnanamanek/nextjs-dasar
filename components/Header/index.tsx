@@ -14,7 +14,7 @@ export default function Header() {
             <Link href="/blog"><a>Blog</a></Link>
           </li>
           <li className={styles.item}>
-            <Link href="/user"><a>User</a></Link>
+            <Link href="/users"><a>User</a></Link>
           </li>
         </ul>
       </nav>
